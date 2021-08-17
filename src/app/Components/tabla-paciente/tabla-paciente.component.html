@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="card text-center">
+    <div class="card-header">
+      <button type="button" class="btn btn-outline-primary">Añadir</button>
+    </div>
+    <div class="card-body">
+<table class="table table-bordered table-hover rounded" style="background-color: #FFFF;">
+  <thead>
+    <tr >
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Documento</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Fecha_Nacimiento</th>
+      <th scope="col">Nacionalidad</th>
+      <th scope="col">Celular</th>
+      <th scope="col">Direccion</th>
+      <th scope="col">Motivo de Consulta</th>
+      <th scope="col">Alta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pac of Pacientes">
+      <th scope="row">{{pac.paccienteId}}</th>
+      <td>{{pac.nombre}}</td>
+      <td>{{pac.apellido}}</td>
+      <td>{{pac.valor_Tipo_Contenido}}</td>
+      <td>{{pac.edad}}</td>
+      <td>{{pac.fecha_Nacimiento}}</td>
+      <td>{{pac.nacionalidad}}</td>
+      <td>{{pac.celular}}</td>
+      <td>{{pac.direccion}}</td>
+      <td>{{pac.motivoConsulta}}</td>
+      <td>{{pac.alta}}</td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+</div>
+</div>
