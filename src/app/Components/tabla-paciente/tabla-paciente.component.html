@@ -21,7 +21,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let pac of Pacientes">
+    <tr *ngFor="let pac of Pacientes" (click)="editarpaciente(pac.paccienteId)">
       <th scope="row">{{pac.paccienteId}}</th>
       <td>{{pac.nombre}}</td>
       <td>{{pac.apellido}}</td>
@@ -33,6 +33,7 @@
       <td>{{pac.direccion}}</td>
       <td>{{pac.motivoConsulta}}</td>
       <td>{{pac.alta}}</td>
+      <td>{{pac.ets}}</td>
     </tr>
 
   </tbody>

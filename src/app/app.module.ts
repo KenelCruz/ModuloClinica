@@ -33,7 +33,8 @@ import { LoginComponent } from './View/login/login.component';
     HttpClientModule,
     DpDatePickerModule,
 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   providers: [PacienteServiceService, UsuarioServiceService],
   bootstrap: [AppComponent]

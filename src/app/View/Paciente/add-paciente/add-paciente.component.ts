@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule  } from '@angular/forms';
 import {Router, ActivatedRoute} from '@angular/router';
-import {PacienteServiceService} from '../../../Services/PacienteService/paciente-service.service'
+import {PacienteServiceService,} from '../../../Services/PacienteService/paciente-service.service'
+import {EnfermedadServiceService,} from '../../../Services/EnfermedadService/enfermedad-service.service'
 import Swal from 'sweetalert2'
-import { IPacientes } from 'src/app/Models/Pacientes-interface';
+import { Enfermedad, IPacientes} from 'src/app/Models/Pacientes-interface';
+import { Medicamento} from 'src/app/Models/MedicamentoModels';
 @Component({
   selector: 'app-add-paciente',
   templateUrl: './add-paciente.component.html',
@@ -11,9 +13,18 @@ import { IPacientes } from 'src/app/Models/Pacientes-interface';
 })
 export class AddPacienteComponent implements OnInit {
 
+
+MedicamoentoFrom = new FormGroup({
+//Medicamento
+
+nombreM: new FormControl(''),
+canitdad : new FormControl(''),
+tipoM : new FormControl(''),
+labiorio : new FormControl(''),
+fechaExpiracion   : new FormControl(''),
+})
   nuevoForm = new FormGroup({
     //paciente
-    paccienteId : new FormControl(''),
     nombre: new FormControl(''),
     apellido: new FormControl(''),
     tipo_Documento  : new FormControl(''),
@@ -24,22 +35,14 @@ export class AddPacienteComponent implements OnInit {
     celular : new FormControl(''),
     direccion : new FormControl(''),
     motivoConsulta  : new FormControl(''),
-    alta  : new FormControl(''),
 
-//Medicamento
-    nombreM: new FormControl(''),
-    canitdad : new FormControl(''),
-    tipoM : new FormControl(''),
-    labiorio : new FormControl(''),
-    fechaExpiracion   : new FormControl(''),
+//Enfermedad
+nombreE : new FormControl(''),
+tipoE  : new FormControl(''),
+sintomas  : new FormControl(''),
+nivel_Peligro     : new FormControl(''),
 
- //Enfermedad
-    nombreE : new FormControl(''),
-    tipoE  : new FormControl(''),
-    sintomas  : new FormControl(''),
-    nivel_Peligro     : new FormControl(''),
-
-
+//historial
     enfermedades_infantiles  : new FormControl(''),
     secuelas_infanteles : new FormControl(''),
     enfermedades_adolecencia   : new FormControl(''),
@@ -64,17 +67,21 @@ export class AddPacienteComponent implements OnInit {
 
   });
 
-  constructor(private router: Router, private PacienteServiceService: PacienteServiceService) { }
+  constructor(private router: Router, private PacienteServiceService: PacienteServiceService, private EnfermedadServiceService: EnfermedadServiceService) { }
 
   ngOnInit(): void {
   }
+
+public Post(form: Enfermedad) {
+  this.EnfermedadServiceService.postEnfermedad(form).subscribe((res:any)=>{})
+}
 
   public postForm(form: IPacientes){
 
     if(form!==null){
     this.PacienteServiceService.postPaciente(form).subscribe((res: any)=>{
 
-
+    console.log('Post',res)
       Swal.fire({
 
         icon: 'success',
@@ -97,4 +104,6 @@ export class AddPacienteComponent implements OnInit {
       }
 
     }
+
+
 }

@@ -1,8 +1,9 @@
 <div class="card container" >
   <div class="row ">
-
+    <form class="row g-3"  ngDefaultControl [formGroup]="nuevoForm"  (ngSubmit)="postForm(nuevoForm.value)">
     <div class="col-md-12">
       <div class="card-body ">
+
         <div class="accordion " id="accordionPanelsStayOpenExample">
           <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-headingOne">
@@ -14,7 +15,6 @@
               <div class="accordion-body">
                 <div class="card border-top-0 rounded" style="">
                   <div class="card-body">
-                    <form class="row g-3" [formGroup]="nuevoForm" (ngSubmit)="postForm(nuevoForm.value)">
                       <div class="col-md-4">
                         <label for="validationDefault01" class="form-label">Nombre</label>
                         <input type="text" class="form-control" id="validationDefault01" required formControlName="nombre">
@@ -62,7 +62,7 @@
                         <textarea class="form-control" aria-label="With textarea" formControlName="motivoConsulta"></textarea>
                       </div>
 
-                    </form>
+
 
                   </div>
                 </div>
@@ -77,10 +77,10 @@
             </h2>
             <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
               <div class="accordion-body">
-
+                <form class="row g-3"  ngDefaultControl [formGroup]="MedicamoentoFrom"  (ngSubmit)="Post(MedicamoentoFrom.value)">
                 <div class="card border-top-0 rounded" style="">
                   <div class="card-body">
-                    <form class="row g-3" [formGroup]="nuevoForm" (ngSubmit)="postForm(nuevoForm.value)">
+
                       <div class="col-md-4">
                         <label for="validationDefault01" class="form-label">Enfermedad o malestar</label>
                         <input type="text" class="form-control" id="validationDefault01"  required formControlName="nombreE">
@@ -127,11 +127,11 @@
                         <input type="date" class="form-control" id="validationDefault02"  required formControlName="fechaExpiracion">
                       </div>
 
-                    </form>
+
 
                   </div>
                 </div>
-
+              </form>
               </div>
             </div>
           </div>
@@ -146,7 +146,7 @@
 
                 <div class="card border-top-0 rounded" style="">
                   <div class="card-body">
-                    <form class="row g-3" [formGroup]="nuevoForm" >
+
                       <div class="col-md-5">
                         <label for="validationDefault01" class="form-label">Enfermedades Infantiles</label>
                         <input type="text" class="form-control" id="validationDefault01" required formControlName="enfermedades_infantiles" >
@@ -177,28 +177,16 @@
                       </div>
                       <hr>
                       <div class="col-md-2">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                          <label class="form-check-label" for="flexCheckDefault" formControlName="fracturas">
-                            Fracturas
-                          </label>
-                        </div>
+                        <label for="validationDefault10" class="form-label">Fracturas</label>
+                        <input type="text" class="form-control" id="validationDefault02"  required formControlName="fracturas">
                       </div>
                       <div class="col-md-2">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="true" id="flexCheckDefault">
-                          <label class="form-check-label" for="flexCheckDefault" formControlName="ets">
-                            ETS
-                          </label>
-                        </div>
+                        <label for="validationDefault10" class="form-label">ETS</label>
+                        <input type="text" class="form-control" id="validationDefault02"  required formControlName="ets">
                       </div>
                       <div class="col-md-2">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="true" id="flexCheckDefault">
-                          <label class="form-check-label" for="flexCheckDefault" formControlName="alergicos">
-                            Alergias
-                          </label>
-                        </div>
+                        <label for="validationDefault10" class="form-label">Alergias</label>
+                        <input type="text" class="form-control" id="validationDefault02"  required formControlName="alergicos">
                       </div>
                       <div class="col-md-5">
                         <label for="validationDefault05" class="form-label">Detalle alergias</label>
@@ -208,52 +196,28 @@
 
 
                       <div class="col-md-2">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                          <label class="form-check-label" for="flexCheckDefault" formControlName="tetano">
-                            Tetano
-                          </label>
-                        </div>
+                        <label for="validationDefault10" class="form-label">Tetano</label>
+                        <input type="text" class="form-control" id="validationDefault02"  required formControlName="tetano">
                       </div>
                       <div class="col-md-2">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                          <label class="form-check-label" for="flexCheckDefault" formControlName="difeeria">
-                            Diferia
-                          </label>
-                        </div>
+                        <label for="validationDefault10" class="form-label">Diferia</label>
+                        <input type="text" class="form-control" id="validationDefault02"  required formControlName="difeeria">
                       </div>
                       <div class="col-md-2">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                          <label class="form-check-label" for="flexCheckDefault" formControlName="sarampion">
-                            Sarampion
-                          </label>
-                        </div>
+                        <label for="validationDefault10" class="form-label">Sarampio</label>
+                        <input type="text" class="form-control" id="validationDefault02"  required formControlName="sarampion">
                       </div>
                       <div class="col-md-2">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                          <label class="form-check-label" for="flexCheckDefault" formControlName="quejarse">
-                            Quejarse
-                          </label>
-                        </div>
+                        <label for="validationDefault10" class="form-label">Qujarse</label>
+                        <input type="text" class="form-control" id="validationDefault02"  required formControlName="quejarse">
                       </div>
                       <div class="col-md-2">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                          <label class="form-check-label" for="flexCheckDefault" formControlName="influenza">
-                            Influenza
-                          </label>
-                        </div>
+                        <label for="validationDefault10" class="form-label">Influenza</label>
+                        <input type="text" class="form-control" id="validationDefault02"  required formControlName="influenza">
                       </div>
                       <div class="col-md-2">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                          <label class="form-check-label" for="flexCheckDefault" formControlName="herpes">
-                            Herpes
-                          </label>
-                        </div>
+                        <label for="validationDefault10" class="form-label">Herpes</label>
+                        <input type="text" class="form-control" id="validationDefault02"  required formControlName="herpes">
                       </div>
 
                       <div class="col-md-5">
@@ -261,7 +225,7 @@
                         <textarea class="form-control" aria-label="With textarea" formControlName="otros"></textarea>
 
                       </div>
-                    </form>
+
 
                   </div>
 
@@ -273,10 +237,12 @@
     </div>
     <div class="card-footer">
       <div class="col-12">
-        <button class="btn btn-outline-success" type="submit" (ngSubmit)="postForm(nuevoForm.value)">Agregar</button>
+        <button class="btn btn-outline-success" type="submit">Agregar</button>
       </div>
     </div>
+
   </div>
+</form>
 </div>
 
 

@@ -1,1 +1,93 @@
-<p>edit-paciente works!</p>
+<div class="card container" >
+  <div class="row ">
+    <form class="row g-3" [formGroup]="editForm"  (ngSubmit)="postForm(editForm.value)">
+    <div class="col-md-12">
+      <div class="card-body ">
+
+        <div class="accordion " id="accordionPanelsStayOpenExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                Datos personales
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+              <div class="accordion-body">
+                <div class="card border-top-0 rounded" style="">
+                  <div class="card-body">
+                      <div class="col-md-4">
+                        <label for="validationDefault01" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="validationDefault01" required formControlName="nombre">
+                      </div>
+                      <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Apelido</label>
+                        <input type="text" class="form-control" id="validationDefault02" required formControlName="apellido">
+                      </div>
+                      <div class="col-md-3">
+                        <label for="validationDefault04" class="form-label">Tipo de Documento</label>
+                        <select class="form-select" id="validationDefault04" required formControlName="tipo_Documento">
+                          <option selected value="0">Cedula</option>
+                          <option selected value="1">Pasapote</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="validationDefaultUsername" class="form-label">Numero de Documento</label>
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required  formControlName="valor_Tipo_Contenido">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <label for="validationDefault03" class="form-label">edad</label>
+                        <input type="text" class="form-control" id="validationDefault03" required formControlName="edad">
+                      </div>
+                      <div class="col-md-3">
+                        <label for="validationDefault05" class="form-label">Fecha de nacimiento</label>
+                        <input type="date" class="form-control" id="validationDefault04" formControlName="fecha_Nacimiento">
+
+                      </div>
+                      <div class="col-md-4">
+                        <label for="validationDefault05" class="form-label">Nacionalidad</label>
+                        <input type="text" class="form-control" id="validationDefault04" formControlName="nacionalidad">
+                      </div>
+                      <div class="col-md-3">
+                        <label for="validationDefault05" class="form-label">Celular</label>
+                        <input type="text" class="form-control" id="validationDefault04" formControlName="celular" >
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationDefault05" class="form-label">Direccion</label>
+                        <input type="text" class="form-control" id="validationDefault04" formControlName="direccion">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationDefault05" class="form-label">Motivo de la Consulta</label>
+                        <textarea class="form-control" aria-label="With textarea" formControlName="motivoConsulta"></textarea>
+                      </div>
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="col-12">
+        <button class="btn btn-outline-success" type="submit">Guardar</button>
+
+      </div>
+    </div>
+
+  </div>
+</form>
+<button type="submit" class="btn btn-outline-danger" (click)="eliminar()">Eliminar</button>
+</div>
+
+
+
+
+
+
+
+

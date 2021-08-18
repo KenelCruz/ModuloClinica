@@ -20,9 +20,15 @@ export class TablaPacienteComponent implements OnInit {
   public MostarPaciente() {
     this.PacienteServiceService.getPacientes().subscribe((resp:any) => {
       this.Pacientes = resp;
+
     });
   }
   public nuevopaciente(){
     this.router.navigate(['AddPacientes']);
+  }
+
+  public editarpaciente(paccienteId: any){
+    this.router.navigate(['EditPacientes', paccienteId])
+
   }
 }

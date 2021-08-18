@@ -1,0 +1,9 @@
+.altura{
+position: absolute;
+border-bottom: 2cm;
+border-top: 2cm;
+ width: 300px;
+ height: 200%;
+ background-color: rgb(240, 235, 235);
+ margin-right: 4cm;
+}

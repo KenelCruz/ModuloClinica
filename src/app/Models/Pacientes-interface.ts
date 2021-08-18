@@ -15,6 +15,7 @@ export interface IPacientes {
   padecimento:          Padecimento[];
   historialId:          number;
   historial:            Historial[];
+
 }
 
 export interface Farmacia {
@@ -43,19 +44,19 @@ export interface Historial {
   secuelas_adolecencia:     string;
   enfermedades_Adultez:     string;
   secuelas_Adultez:         string;
-  hospitalizaciones:        boolean;
-  antecedentesQx:           boolean;
-  transfuciones:            boolean;
-  fracturas:                boolean;
-  ets:                      boolean;
-  alergicos:                boolean;
+  hospitalizaciones:        string;
+  antecedentesQx:           string;
+  transfuciones:            string;
+  fracturas:                string;
+  ets:                      string;
+  alergicos:                string;
   espesificacion_alergica:  string;
-  tetano:                   boolean;
-  difeeria:                 boolean;
-  sarampion:                boolean;
-  gripe:                    boolean;
-  influenza:                boolean;
-  herpes:                   boolean;
+  tetano:                   string;
+  difeeria:                 string;
+  sarampion:                string;
+  gripe:                    string;
+  influenza:                string;
+  herpes:                   string;
   otros:                    string;
   pacienteeId:              number;
 }

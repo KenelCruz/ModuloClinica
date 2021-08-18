@@ -13,6 +13,14 @@ export class PacienteServiceService {
   public getPacientes() {
     return this.http.get<IPacientes>(this.URL_API);
   }
+
+  public getPacientesById(paccienteId: any): Observable<IPacientes> {
+    let direccion = this.URL_API + '/' + paccienteId;
+    return this.http.get<IPacientes>(direccion);
+  }
+
+
+
   public postPaciente(form: IPacientes): Observable<IPacientes> {
     return this.http.post<IPacientes>(this.URL_API, form);
   }
