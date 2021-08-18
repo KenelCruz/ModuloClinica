@@ -1,1 +1,287 @@
-<p>add-paciente works!</p>
+<div class="card container" >
+  <div class="row ">
+
+    <div class="col-md-12">
+      <div class="card-body ">
+        <div class="accordion " id="accordionPanelsStayOpenExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                Datos personales
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+              <div class="accordion-body">
+                <div class="card border-top-0 rounded" style="">
+                  <div class="card-body">
+                    <form class="row g-3" [formGroup]="nuevoForm" (ngSubmit)="postForm(nuevoForm.value)">
+                      <div class="col-md-4">
+                        <label for="validationDefault01" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="validationDefault01" required formControlName="nombre">
+                      </div>
+                      <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Apelido</label>
+                        <input type="text" class="form-control" id="validationDefault02" required formControlName="apellido">
+                      </div>
+                      <div class="col-md-3">
+                        <label for="validationDefault04" class="form-label">Tipo de Documento</label>
+                        <select class="form-select" id="validationDefault04" required formControlName="tipo_Documento">
+                          <option selected value="0">Cedula</option>
+                          <option selected value="1">Pasapote</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="validationDefaultUsername" class="form-label">Numero de Documento</label>
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required  formControlName="valor_Tipo_Contenido">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <label for="validationDefault03" class="form-label">edad</label>
+                        <input type="text" class="form-control" id="validationDefault03" required formControlName="edad">
+                      </div>
+                      <div class="col-md-3">
+                        <label for="validationDefault05" class="form-label">Fecha de nacimiento</label>
+                        <input type="date" class="form-control" id="validationDefault04" formControlName="fecha_Nacimiento">
+
+                      </div>
+                      <div class="col-md-4">
+                        <label for="validationDefault05" class="form-label">Nacionalidad</label>
+                        <input type="text" class="form-control" id="validationDefault04" formControlName="nacionalidad">
+                      </div>
+                      <div class="col-md-3">
+                        <label for="validationDefault05" class="form-label">Celular</label>
+                        <input type="text" class="form-control" id="validationDefault04" formControlName="celular" >
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationDefault05" class="form-label">Direccion</label>
+                        <input type="text" class="form-control" id="validationDefault04" formControlName="direccion">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationDefault05" class="form-label">Motivo de la Consulta</label>
+                        <textarea class="form-control" aria-label="With textarea" formControlName="motivoConsulta"></textarea>
+                      </div>
+
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                Motivo de la Consulta
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+              <div class="accordion-body">
+
+                <div class="card border-top-0 rounded" style="">
+                  <div class="card-body">
+                    <form class="row g-3" [formGroup]="nuevoForm" (ngSubmit)="postForm(nuevoForm.value)">
+                      <div class="col-md-4">
+                        <label for="validationDefault01" class="form-label">Enfermedad o malestar</label>
+                        <input type="text" class="form-control" id="validationDefault01"  required formControlName="nombreE">
+                      </div>
+                      <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Tipo</label>
+                        <input type="text" class="form-control" id="validationDefault02"  required formControlName="tipoE">
+                      </div>
+                      <div class="col-md-4">
+                        <label for="validationDefaultUsername" class="form-label">Sintomas</label>
+                        <div class="input-group">
+                          <textarea class="form-control" aria-label="With textarea" formControlName="sintomas"></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <label for="validationDefault04" class="form-label">Nivel de peligro</label>
+                        <select class="form-select" id="validationDefault04" required>
+                          <option selected value="0">Alto</option>
+                          <option selected value="1">Medio</option>
+                          <option selected value="2">Bajo</option>
+                        </select>
+                      </div>
+                      <hr>
+                      <div class="col-md-4">
+                        <label for="validationDefault01" class="form-label">Nombre del Medicamento</label>
+                        <input type="text" class="form-control" id="validationDefault01"  required formControlName="nombreM">
+                      </div>
+                      <div class="col-md-3">
+                        <label for="validationDefault02" class="form-label">Tipo</label>
+                        <input type="text" class="form-control" id="validationDefault02"  required formControlName="tipoM">
+                      </div>
+                      <div class="col-md-3">
+                        <label for="validationDefaultUsername" class="form-label">Cantidad</label>
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="validationDefault02"  required formControlName="canitdad">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">laboratorio</label>
+                        <input type="text" class="form-control" id="validationDefault02"  required formControlName="labiorio">
+                      </div>
+                      <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Fecha Expriracion</label>
+                        <input type="date" class="form-control" id="validationDefault02"  required formControlName="fechaExpiracion">
+                      </div>
+
+                    </form>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                Historial Medico
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+              <div class="accordion-body">
+
+                <div class="card border-top-0 rounded" style="">
+                  <div class="card-body">
+                    <form class="row g-3" [formGroup]="nuevoForm" >
+                      <div class="col-md-5">
+                        <label for="validationDefault01" class="form-label">Enfermedades Infantiles</label>
+                        <input type="text" class="form-control" id="validationDefault01" required formControlName="enfermedades_infantiles" >
+                      </div>
+                      <div class="col-md-5">
+                        <label for="validationDefault02" class="form-label">Secuelas</label>
+                        <input type="text" class="form-control" id="validationDefault02" required formControlName="secuelas_infanteles">
+                      </div>
+
+                      <div class="col-md-5">
+                        <label for="validationDefaultUsername" class="form-label">Enfermedades en Adolecencia</label>
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required formControlName="enfermedades_adolecencia">
+                        </div>
+                      </div>
+                      <div class="col-md-5">
+                        <label for="validationDefault03" class="form-label">Secuelas</label>
+                        <input type="text" class="form-control" id="validationDefault03" required formControlName="secuelas_adolecencia">
+                      </div>
+                      <div class="col-md-5">
+                        <label for="validationDefault05" class="form-label">Enfermedades Adultez</label>
+                        <input type="text" class="form-control" id="validationDefault04" formControlName="enfermedades_Adultez">
+
+                      </div>
+                      <div class="col-md-5">
+                        <label for="validationDefault05" class="form-label">Secuelas</label>
+                        <input type="text" class="form-control" id="validationDefault04"  formControlName="secuelas_Adultez">
+                      </div>
+                      <hr>
+                      <div class="col-md-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault" formControlName="fracturas">
+                            Fracturas
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="true" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault" formControlName="ets">
+                            ETS
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="true" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault" formControlName="alergicos">
+                            Alergias
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-md-5">
+                        <label for="validationDefault05" class="form-label">Detalle alergias</label>
+                        <textarea class="form-control" aria-label="With textarea" formControlName="espesificacion_alergica"></textarea>
+
+                      </div>
+
+
+                      <div class="col-md-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault" formControlName="tetano">
+                            Tetano
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault" formControlName="difeeria">
+                            Diferia
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault" formControlName="sarampion">
+                            Sarampion
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault" formControlName="quejarse">
+                            Quejarse
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault" formControlName="influenza">
+                            Influenza
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault" formControlName="herpes">
+                            Herpes
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="col-md-5">
+                        <label for="validationDefault05" class="form-label">Otros</label>
+                        <textarea class="form-control" aria-label="With textarea" formControlName="otros"></textarea>
+
+                      </div>
+                    </form>
+
+                  </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="col-12">
+        <button class="btn btn-outline-success" type="submit" (ngSubmit)="postForm(nuevoForm.value)">Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
